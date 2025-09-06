@@ -82,11 +82,9 @@ class CodeAnalysisAPIView(APIView):
             if save_submission:
                 # Save to database
                 code_submission = Code.objects.create(
-                    code=code,
                     language=language,
                     user=request.user,
                     title=title,
-                    description=description,
                     issues=issues,
                     issue_count=len(issues),
                     analysis_status='analyzed'
